@@ -26,20 +26,20 @@ export const getExchangeRate = (
 
   // Hardcoded INR-based exchange rates
   const ratesToINR: Record<string, number> = {
-    USD: 83.25,
-    EUR: 89.75,
-    GBP: 104.1,
-    SAR: 22.2,
-    JPY: 0.56,
-    AUD: 55.6,
-    CAD: 61.3,
-    CHF: 93.45,
-    SGD: 61.9,
-    AED: 22.65,
-    THB: 2.31,
-    MYR: 17.75,
-    IDR: 0.0052,
-    VND: 0.0033,
+   USD: 85.46,
+    EUR: 95.63,
+    GBP: 113.53,
+    SAR: 22.76,
+    JPY: 0.58,
+    AUD: 55.01,
+    CAD: 61.09,
+    CHF: 101.58,
+    SGD: 65.66,
+    AED: 23.24,
+    THB: 2.55,
+    MYR: 19.89,
+    IDR: 0.00515,
+    VND: 0.00329,
   };
 
   const INRToRates: Record<string, number> = Object.fromEntries(
