@@ -59,19 +59,19 @@ const Hero: React.FC = () => {
                   <div className="space-y-4 text-center text-gray-800 text-lg">
                     <div>
                       🇺🇸 USD → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">83.25</span>
+                      <span className="text-teal-700 font-bold">85.46</span>
                     </div>
                     <div>
                       🇪🇺 EUR → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">89.75</span>
+                      <span className="text-teal-700 font-bold">95.63</span>
                     </div>
                     <div>
                       🇬🇧 GBP → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">104.10</span>
+                      <span className="text-teal-700 font-bold">113.53</span>
                     </div>
                     <div>
                       🇸🇦 SAR → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">22.20</span>
+                      <span className="text-teal-700 font-bold">22.76</span>
                     </div>
                   </div>
 
