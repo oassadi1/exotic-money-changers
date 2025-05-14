@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next", // Improved TS support (optional)
+    "formulahendry.auto-close-tag", // Auto-close tags in JSX
+    "formulahendry.auto-rename-tag" // Rename closing tag with opening tag
+  ]
+}
