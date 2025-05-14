@@ -15,7 +15,7 @@ function App() {
     // Find and update the favicon
     const favicon = document.querySelector('link[rel="icon"]');
     if (favicon) {
-      favicon.setAttribute("href", "/src/assets/logo.png");
+      favicon.setAttribute("href", "logo.png");
     }
   }, []);
 
