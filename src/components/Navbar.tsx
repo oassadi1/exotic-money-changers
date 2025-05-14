@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             <div className="flex-shrink-0">
               <a href="#" className="flex items-center">
                 <img
-                  src="/src/assets/logo.png"
+                  src="logo.png"
                   alt="Exotic Money Logo"
                   className="h-16 w-30 object-contain rounded-full"
                 />
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
             <div className="ml-10 flex items-center space-x-4">
               <a
                 href="#services"
-                className={`px-3 py-5 rounded-md text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-teal-200"}`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-teal-200"}`}
               >
                 Services
               </a>

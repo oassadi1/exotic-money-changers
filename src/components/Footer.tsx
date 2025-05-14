@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center">
               <img
-                src="/src/assets/logo1.jpg"
+                src="logo1.jpg"
                 alt="Exotic Money Logo"
                 className="h-18 w-16 object-contain rounded-full bg-white p-1"
               />
@@ -207,37 +207,25 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center items-center gap-6 text-gray-500 text-sm">
             {/* SSL Secured */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/src/assets/ssl.png"
-                alt="SSL Secured"
-                className="h-6"
-              />
+              <img src="ssl.png" alt="SSL Secured" className="h-6" />
               <span>SSL Secured</span>
             </div>
 
             {/* PCI Compliant */}
             <div className="flex items-center space-x-2">
-              <img src="/src/assets/psi.png" alt="PCI DSS" className="h-6" />
+              <img src="psi.png" alt="PCI DSS" className="h-6" />
               <span>PSI-DSS Compliant</span>
             </div>
 
             {/* RBI Registered */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/src/assets/rbi.png"
-                alt="RBI Registered"
-                className="h-6"
-              />
+              <img src="rbi.png" alt="RBI Registered" className="h-6" />
               <span>RBI Registered</span>
             </div>
 
             {/* Best Rate Guarantee */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/src/assets/guarantee.png"
-                alt="Best Rate"
-                className="h-6"
-              />
+              <img src="guarantee.png" alt="Best Rate" className="h-6" />
               <span>Best Rate Guarantee</span>
             </div>
           </div>
