@@ -253,7 +253,7 @@ const Contact: React.FC = () => {
                         href="tel:+18005551234"
                         className="text-teal-100 hover:text-white transition-colors"
                       >
-                        +91-98441 40488
+                        +91-99015 25496
                       </a>
                     </div>
                   </div>
