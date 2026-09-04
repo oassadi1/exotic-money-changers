@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getRatesToINR } from '../data/currencies';
 
 const Hero: React.FC = () => {
+  const [rates, setRates] = useState<Record<string, number>>({
+    USD: 96.5,
+    EUR: 111.9,
+    GBP: 129.9,
+    SAR: 26.2,
+  });
+
+  useEffect(() => {
+    const loadRates = async () => {
+      const latestRates = await getRatesToINR();
+
+      setRates({
+        USD: latestRates.USD,
+        EUR: latestRates.EUR,
+        GBP: latestRates.GBP,
+        SAR: latestRates.SAR,
+      });
+    };
+
+    loadRates();
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-teal-800 to-teal-600 text-white">
       {/* Background pattern */}
@@ -24,11 +47,13 @@ const Hero: React.FC = () => {
               Fast & Secure <br />
               <span className="text-amber-400">Currency Exchange</span>
             </h1>
+
             <p className="mt-6 text-lg md:text-xl text-teal-50 max-w-2xl">
               Exotic Money Changers offers competitive exchange rates with no hidden fees. Whether
               you're traveling, sending money abroad, or investing internationally, we've got you
               covered.
             </p>
+
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="#calculator"
@@ -36,6 +61,7 @@ const Hero: React.FC = () => {
               >
                 Exchange Currency
               </a>
+
               <a
                 href="#services"
                 className="px-8 py-3 bg-transparent border-2 border-white rounded-md font-medium hover:bg-white/10 transition-colors text-center"
@@ -44,12 +70,13 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </div>
+
           <div className="lg:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">
-              {/* Currency exchange card */}
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
                 <div className="bg-teal-700 p-5 text-white text-center relative">
                   <h3 className="font-bold">Today's Top Exchange Rates</h3>
+
                   <span className="absolute top-12 bg-orange-400 text-white text-xs px-2 py-2 rounded-full font-semibold">
                     Best Rates Guaranteed
                   </span>
@@ -58,16 +85,23 @@ const Hero: React.FC = () => {
                 <div className="p-6">
                   <div className="space-y-4 text-center text-gray-800 text-lg">
                     <div>
-                      🇺🇸 USD → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">96.5</span>
+                      🇺🇸 USD → 🇮🇳 ₹ ={' '}
+                      <span className="text-teal-700 font-bold">{rates.USD?.toFixed(2)}</span>
                     </div>
+
                     <div>
-                      🇪🇺 EUR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">111.90</span>
+                      🇪🇺 EUR → 🇮🇳 ₹ ={' '}
+                      <span className="text-teal-700 font-bold">{rates.EUR?.toFixed(2)}</span>
                     </div>
+
                     <div>
-                      🇬🇧 GBP → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">129.90</span>
+                      🇬🇧 GBP → 🇮🇳 ₹ ={' '}
+                      <span className="text-teal-700 font-bold">{rates.GBP?.toFixed(2)}</span>
                     </div>
+
                     <div>
-                      🇸🇦 SAR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">26.20</span>
+                      🇸🇦 SAR → 🇮🇳 ₹ ={' '}
+                      <span className="text-teal-700 font-bold">{rates.SAR?.toFixed(2)}</span>
                     </div>
                   </div>
 
@@ -80,7 +114,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div className="bg-gray-50 p-3 flex items-center justify-center text-sm text-gray-500">
-                  <span>Rates updated: Today at 09:45 AM</span>
+                  <span>Rates updated regularly</span>
                 </div>
               </div>
             </div>
@@ -88,7 +122,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Wave divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
