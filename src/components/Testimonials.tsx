@@ -119,6 +119,25 @@ const Testimonials: React.FC = () => {
             </button>
           </div>
         </div>
+        <div className="mt-8 text-center">
+          <div className="inline-flex flex-col items-center">
+            <div className="flex items-center gap-2">
+              <span className="text-amber-400 text-xl tracking-wide">★★★★★</span>
+              <span className="font-semibold text-gray-800">Google Reviews</span>
+            </div>
+
+            <p className="mt-2 text-sm text-gray-500">Read more verified customer experiences</p>
+
+            <a
+              href="https://maps.app.goo.gl/kAUfhvaYAQooZCEp6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center justify-center bg-white border border-teal-600 text-teal-700 hover:bg-teal-50 font-semibold px-5 py-2.5 rounded-lg transition-colors"
+            >
+              View All Google Reviews →
+            </a>
+          </div>
+        </div>
 
         <div className="mt-16 bg-teal-50 rounded-xl p-6 lg:p-8 shadow-sm">
           <div className="text-center mb-8">
