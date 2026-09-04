@@ -26,16 +26,16 @@ export const getExchangeRate = (
 
   // Hardcoded INR-based exchange rates
   const ratesToINR: Record<string, number> = {
-   USD: 85.46,
-    EUR: 95.63,
-    GBP: 113.53,
+   USD: 96.50,
+    EUR: 111.80,
+    GBP: 129.89,
     SAR: 26.76,
     JPY: 0.58,
     AUD: 55.01,
-    CAD: 61.09,
-    CHF: 101.58,
-    SGD: 65.66,
-    AED: 23.24,
+    CAD: 70.50,
+    CHF: 118.80,
+    SGD: 75.66,
+    AED: 26.73,
     THB: 2.55,
     MYR: 19.89,
     IDR: 0.00515,
