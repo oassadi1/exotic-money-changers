@@ -5,6 +5,7 @@ type CurrencyRate = {
   id: number;
   currency_code: string;
   rate: number;
+  updated_at: string | null;
 };
 
 const Admin: React.FC = () => {
@@ -14,6 +15,7 @@ const Admin: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [rates, setRates] = useState<CurrencyRate[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   useEffect(() => {
     const checkSession = async () => {
@@ -54,7 +56,7 @@ const Admin: React.FC = () => {
 
     const { data, error } = await supabase
       .from('currency_rates')
-      .select('id, currency_code, rate')
+      .select('id, currency_code, rate, updated_at')
       .order('currency_code');
 
     if (error) {
@@ -63,7 +65,24 @@ const Admin: React.FC = () => {
       return;
     }
 
-    setRates(data || []);
+    const loadedRates = data || [];
+
+    setRates(loadedRates);
+
+    const timestamps = loadedRates
+      .map((item) => item.updated_at)
+      .filter((timestamp): timestamp is string => Boolean(timestamp));
+
+    if (timestamps.length > 0) {
+      const latestTimestamp = timestamps.reduce((latest, current) =>
+        new Date(current).getTime() > new Date(latest).getTime() ? current : latest
+      );
+
+      setLastUpdated(latestTimestamp);
+    } else {
+      setLastUpdated(null);
+    }
+
     setIsLoading(false);
   };
 
@@ -77,10 +96,15 @@ const Admin: React.FC = () => {
     setIsLoading(true);
     setMessage('Saving rates...');
 
+    const updateTime = new Date().toISOString();
+
     for (const item of rates) {
       const { error } = await supabase
         .from('currency_rates')
-        .update({ rate: item.rate })
+        .update({
+          rate: item.rate,
+          updated_at: updateTime,
+        })
         .eq('id', item.id);
 
       if (error) {
@@ -93,6 +117,9 @@ const Admin: React.FC = () => {
     }
 
     setMessage('Rates updated successfully.');
+
+    await fetchRates();
+
     setIsLoading(false);
   };
 
@@ -103,6 +130,19 @@ const Admin: React.FC = () => {
     setEmail('');
     setPassword('');
     setMessage('');
+    setLastUpdated(null);
+  };
+
+  const formatLastUpdated = (timestamp: string) => {
+    return new Date(timestamp).toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
   };
 
   if (!isLoggedIn) {
@@ -157,10 +197,18 @@ const Admin: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-start justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Currency Rate Management</h1>
+
             <p className="text-gray-600 mt-1">Update the INR selling rates below.</p>
+
+            {lastUpdated && (
+              <p className="text-sm text-gray-500 mt-2">
+                Last Updated:{' '}
+                <span className="font-medium text-gray-700">{formatLastUpdated(lastUpdated)}</span>
+              </p>
+            )}
           </div>
 
           <button
