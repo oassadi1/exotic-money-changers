@@ -58,16 +58,16 @@ const Hero: React.FC = () => {
                 <div className="p-6">
                   <div className="space-y-4 text-center text-gray-800 text-lg">
                     <div>
-                      🇺🇸 USD → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">85.40</span>
+                      🇺🇸 USD → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">96.5</span>
                     </div>
                     <div>
-                      🇪🇺 EUR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">95.61</span>
+                      🇪🇺 EUR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">111.90</span>
                     </div>
                     <div>
-                      🇬🇧 GBP → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">113.51</span>
+                      🇬🇧 GBP → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">129.90</span>
                     </div>
                     <div>
-                      🇸🇦 SAR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">22.76</span>
+                      🇸🇦 SAR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">26.20</span>
                     </div>
                   </div>
 
