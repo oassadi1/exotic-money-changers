@@ -40,9 +40,9 @@ const Hero: React.FC = () => {
         ></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 lg:py-32">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 lg:pr-12 mb-12 lg:mb-0">
+          <div className="w-full lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Fast & Secure <br />
               <span className="text-amber-400">Currency Exchange</span>
@@ -71,19 +71,21 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2 flex justify-center">
+          <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div className="bg-teal-700 p-5 text-white text-center relative">
-                  <h3 className="font-bold">Today's Top Exchange Rates</h3>
+                <div className="bg-teal-700 px-4 py-5 text-white text-center">
+                  <h3 className="font-bold text-base sm:text-lg">Today's Top Exchange Rates</h3>
 
-                  <span className="absolute top-12 bg-orange-400 text-white text-xs px-2 py-2 rounded-full font-semibold">
-                    Best Rates Guaranteed
-                  </span>
+                  <div className="mt-3">
+                    <span className="inline-block bg-orange-400 text-white text-xs px-3 py-1.5 rounded-full font-semibold">
+                      Best Rates Guaranteed
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="space-y-4 text-center text-gray-800 text-lg">
+                <div className="p-4 sm:p-6">
+                  <div className="space-y-4 text-center text-gray-800 text-base sm:text-lg">
                     <div>
                       🇺🇸 USD → 🇮🇳 ₹ ={' '}
                       <span className="text-teal-700 font-bold">{rates.USD?.toFixed(2)}</span>
@@ -107,7 +109,7 @@ const Hero: React.FC = () => {
 
                   <a
                     href="#calculator"
-                    className="mt-6 block w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded text-center transition-colors"
+                    className="mt-6 block w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2.5 px-4 rounded text-center transition-colors"
                   >
                     View All Rates
                   </a>

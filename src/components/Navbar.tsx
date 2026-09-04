@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,55 +14,71 @@ const Navbar: React.FC = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav
       className={`fixed w-full z-30 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-3 md:py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <a href="#" className="flex items-center">
-                <img
-                  src="logo.png"
-                  alt="Exotic Money Logo"
-                  className="h-16 w-30 object-contain rounded-full"
-                />
-                <span
-                  className={`ml-2 text-xl font-bold ${isScrolled ? "text-teal-800" : "text-white"}`}
-                >
-                  Exotic Money Changers PVT LTD.
-                </span>
-              </a>
-            </div>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <a href="#" className="flex items-center min-w-0">
+              <img
+                src="logo.png"
+                alt="Exotic Money Logo"
+                className="h-12 w-auto md:h-16 object-contain rounded-full flex-shrink-0"
+              />
+
+              <span
+                className={`ml-2 font-bold leading-tight truncate text-sm sm:text-base md:text-xl ${
+                  isScrolled ? 'text-teal-800' : 'text-white'
+                }`}
+              >
+                Exotic Money Changers PVT LTD.
+              </span>
+            </a>
           </div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <a
                 href="#services"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-teal-200"}`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? 'text-gray-700 hover:text-teal-600'
+                    : 'text-white hover:text-teal-200'
+                }`}
               >
                 Services
               </a>
+
               <a
                 href="#calculator"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-teal-200"}`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? 'text-gray-700 hover:text-teal-600'
+                    : 'text-white hover:text-teal-200'
+                }`}
               >
                 Exchange Calculator
               </a>
+
               <a
                 href="#testimonials"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isScrolled ? "text-gray-700 hover:text-teal-600" : "text-white hover:text-teal-200"}`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? 'text-gray-700 hover:text-teal-600'
+                    : 'text-white hover:text-teal-200'
+                }`}
               >
                 Testimonials
               </a>
+
               <a
                 href="#contact"
                 className="px-4 py-2 rounded-md text-sm font-medium bg-amber-500 text-white hover:bg-amber-600 transition-colors shadow-sm"
@@ -72,24 +88,21 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${isScrolled ? "text-gray-700" : "text-white"}`}
+              className={`p-2 rounded-md ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              aria-label="Toggle navigation menu"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <div className="px-3 pt-2 pb-3 space-y-1 bg-white shadow-lg">
           <a
             href="#services"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-600"
@@ -97,6 +110,7 @@ const Navbar: React.FC = () => {
           >
             Services
           </a>
+
           <a
             href="#calculator"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-600"
@@ -104,6 +118,7 @@ const Navbar: React.FC = () => {
           >
             Exchange Calculator
           </a>
+
           <a
             href="#testimonials"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-600"
@@ -111,6 +126,7 @@ const Navbar: React.FC = () => {
           >
             Testimonials
           </a>
+
           <a
             href="#contact"
             className="block px-3 py-2 rounded-md text-base font-medium bg-amber-500 text-white hover:bg-amber-600 text-center"
