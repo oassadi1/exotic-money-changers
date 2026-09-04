@@ -29,7 +29,7 @@ export const getExchangeRate = (
    USD: 85.46,
     EUR: 95.63,
     GBP: 113.53,
-    SAR: 22.76,
+    SAR: 26.76,
     JPY: 0.58,
     AUD: 55.01,
     CAD: 61.09,
