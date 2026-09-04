@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Hero: React.FC = () => {
   return (
@@ -10,9 +10,9 @@ const Hero: React.FC = () => {
           style={{
             backgroundImage:
               "url('https://images.pexels.com/photos/259249/pexels-photo-259249.jpeg?auto=compress&cs=tinysrgb&w=1500')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            mixBlendMode: "overlay",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            mixBlendMode: 'overlay',
           }}
         ></div>
       </div>
@@ -25,9 +25,9 @@ const Hero: React.FC = () => {
               <span className="text-amber-400">Currency Exchange</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-teal-50 max-w-2xl">
-              Exotic Money Changers offers competitive exchange rates with no
-              hidden fees. Whether you're traveling, sending money abroad, or
-              investing internationally, we've got you covered.
+              Exotic Money Changers offers competitive exchange rates with no hidden fees. Whether
+              you're traveling, sending money abroad, or investing internationally, we've got you
+              covered.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
@@ -58,20 +58,16 @@ const Hero: React.FC = () => {
                 <div className="p-6">
                   <div className="space-y-4 text-center text-gray-800 text-lg">
                     <div>
-                      🇺🇸 USD → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">85.46</span>
+                      🇺🇸 USD → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">85.40</span>
                     </div>
                     <div>
-                      🇪🇺 EUR → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">95.63</span>
+                      🇪🇺 EUR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">95.61</span>
                     </div>
                     <div>
-                      🇬🇧 GBP → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">113.53</span>
+                      🇬🇧 GBP → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">113.51</span>
                     </div>
                     <div>
-                      🇸🇦 SAR → 🇮🇳 ₹ ={" "}
-                      <span className="text-teal-700 font-bold">22.76</span>
+                      🇸🇦 SAR → 🇮🇳 ₹ = <span className="text-teal-700 font-bold">22.76</span>
                     </div>
                   </div>
 
@@ -94,11 +90,7 @@ const Hero: React.FC = () => {
 
       {/* Wave divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 120L48 105C96 90 192 60 288 50C384 40 480 50 576 55C672 60 768 60 864 65C960 70 1056 80 1152 75C1248 70 1344 50 1392 40L1440 30V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0Z"
             fill="white"
